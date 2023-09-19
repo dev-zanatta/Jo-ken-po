@@ -4,9 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/softpar/NetBeansProjects/WebApplication2/web/resultado.xhtml</file>
+            <file>file:/home/softpar/NetBeansProjects/WebApplication2/web/index.xhtml</file>
             <file>file:/home/softpar/NetBeansProjects/WebApplication2/src/java/JogoController.java</file>
-            <file>file:/home/softpar/NetBeansProjects/WebApplication2/web/jogo.xhtml</file>
             <file>file:/home/softpar/NetBeansProjects/WebApplication2/web/estatisticas.xhtml</file>
+            <file>file:/home/softpar/NetBeansProjects/WebApplication2/web/jogo.xhtml</file>
             <file>file:/home/softpar/NetBeansProjects/WebApplication2/src/java/Jogador.java</file>
             <file>file:/home/softpar/NetBeansProjects/WebApplication2/src/java/JogoBean.java</file>
             <file>file:/home/softpar/NetBeansProjects/WebApplication2/src/java/JogadorBean.java</file>
