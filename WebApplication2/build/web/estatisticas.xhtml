@@ -4,12 +4,47 @@
       xmlns:f="http://java.sun.com/jsf/core">
 <head>
     <title>Estatísticas</title>
+    <style>
+        .table-bonita {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table-bonita th, .table-bonita td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid lightsteelblue;
+        }
+
+        .table-bonita th {
+            background-color: lightsteelblue;
+            color: black;
+            border: 1px solid black;
+        }
+
+        .botaoBonito {
+            padding: 3px 3px 3px 3px;
+            background-color: lightsteelblue;
+            color: black;
+            border-radius: 8px;
+            box-shadow: 0px 0px 0px 2px black;
+        }
+
+        .text-center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+        }
+
+    </style>
 </head>
-<body>
-    <h:dataTable value="#{jogadorBean.jogadores}" var="jogador">
+<body class="text-center">
+    <h:dataTable value="#{jogadorBean.jogadores}" var="jogador" styleClass="table-bonita">
         <h:column>
             <f:facet name="header">Nome do Jogador</f:facet>
-            <h:outputText value="#{jogador.nome}" />
+            <h:outputText value="#{jogador.nome}"/>
         </h:column>
         <h:column>
             <f:facet name="header">Total de Partidas</f:facet>
@@ -30,7 +65,8 @@
     </h:dataTable>
     
     <h:form>
-        <h:commandButton value="Inicio" action="index.xhtml"/>
+        <h:commandButton value="Inicio" action="index.xhtml" class="botaoBonito" style="margin-top: 20px; margin-right: 5px;"/>
+        <h:commandButton value="Zerar Minhas Estatísticas" action="#{jogadorBean.zerarMinhasEstatisticas}" class="botaoBonito" style="margin-top: 10px;" />
     </h:form>
 </body>
 </html>

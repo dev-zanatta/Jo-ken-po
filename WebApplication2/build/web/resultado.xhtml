@@ -8,44 +8,62 @@
             flex-direction: column;
             gap: 40px;
         }
-        
+
         .botaoBonito {
-            padding: 8px 8px 8px 8px;
-            background-color: blue;
-            color: white;
+            padding: 3px 3px 3px 3px;
+            background-color: lightsteelblue;
+            color: black;
             border-radius: 8px;
-            box-shadow: 0px 0px 0px 4px black;
+            box-shadow: 0px 0px 0px 2px black;
+        }
+        
+        .text-center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+        }
+        
+        .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
         }
 
     </style>
 </head>
-<body class="line-break">
-    <div class="line-break">
-        <h:outputText value="Sua Escolha: #{jogoBean.opcaoJogador}" />
+<body class="text-center">
+    <div class="line-break" style="display: flex; flex-direction: row; align-items: center;">
+        <h:outputText value="Sua Escolha: #{jogoBean.opcaoJogador}"/>
+        <h:graphicImage value="/fotos/${jogoBean.jogadaJogador}.png" width="50" height="50" />
     </div>
-    <div class="line-break">
+    <div class="line-break" style="display: flex; flex-direction: row; align-items: center;">
         <h:outputText value="Escolha do Computador: #{jogoBean.opcaoComputador}" />
+        <h:graphicImage value="/fotos/${jogoBean.jogadaComputador}.png" width="50" height="50" />
     </div>
-    <div class="line-break">
+    <div class="line-break" style="margin-top: 20px; margin-bottom: 20px;">
         <h:outputText value="Resultado: #{jogoBean.resultado}" />
     </div>
 
-    <div class="line-break">
+    <div class="line-break" style="margin-top: 20px; margin-bottom: 20px;">
         <h:outputText value="Total de Partidas: #{jogoBean.numPartidas}" />
     </div>
     
-    <div class="line-break">
+    <div class="line-break" style="margin-top: 20px; margin-bottom: 20px;">
         <h:outputText value="Vitórias do Jogador: #{jogoBean.numVitoriasJogador}" />
     </div>
-    <div class="line-break">
+    <div class="line-break" style="margin-top: 20px; margin-bottom: 20px;">
         <h:outputText value="Vitórias do Computador: #{jogoBean.numVitoriasComputador}" />
     </div>
-    <div class="line-break">
+    <div class="line-break" style="margin-top: 20px; margin-bottom: 20px;">
         <h:outputText value="Empates: #{jogoBean.numEmpates}" />
     </div>
 
     <h:form>
-        <h:commandButton value="Jogar Novamente" action="#{jogoBean.jogarNovamente}" class="botaoBonito"/>
+        <h:commandButton value="Jogar Novamente" action="#{jogoBean.jogarNovamente}" class="botaoBonito" style="margin-right: 5px;"/>
         <h:commandButton value="Inicio" action="index.xhtml" class="botaoBonito"/>
         
     </h:form>

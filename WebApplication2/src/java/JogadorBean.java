@@ -35,10 +35,7 @@ public class JogadorBean implements Serializable {
 
         if (!exists) {
             JogoController.jogadores.add(new Jogador(this.nome));
-            System.out.println("Added jogador: " + this.nome);
-        } else {
-            System.out.println("Jogador already exists: " + this.nome);
-        }
+        } 
   
         return "jogo.xhtml"; 
     }
@@ -59,4 +56,17 @@ public class JogadorBean implements Serializable {
         jogoController.setNumEmpates(0);
         jogoController.setNumPartidas(0);
     }
+    
+    public void zerarMinhasEstatisticas() {
+        for (Jogador jogador : jogoController.jogadores) {
+            if (jogador.getNome().equals(this.nome)) {
+                jogador.setNumJogos(0);
+                jogador.setNumVitorias(0);
+                jogador.setNumDerrotas(0);
+                jogador.setNumEmpates(0);
+                break;
+            }
+        }
+    }
+
 }

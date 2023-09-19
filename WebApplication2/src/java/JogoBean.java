@@ -12,24 +12,21 @@ public class JogoBean implements Serializable {
     private int escolhaJogador;
     private int escolhaComputador;
     private String resultado;
+    private String jogadaJogador;
+    private String jogadaComputador;
     private int numPartidas;
     private int numVitoriasJogador;
     private int numVitoriasComputador;
     private int numEmpates;
-    
-    // Getters and setters for properties
-    
+        
     public String jogar() {
-        // Implement the game logic here
-        // Randomly choose the computer's choice, calculate the result, and update statistics
         Random random = new Random();
         escolhaComputador = random.nextInt(3) + 1;
-        return "resultado.xhtml"; // Navigation to the result page after playing
+        return "resultado.xhtml"; 
     }
     
     public String jogarNovamente() {
-        // Implement logic to reset the game
-        return "jogo.xhtml"; // Navigation to the game page again
+        return "jogo.xhtml"; 
     }
     
     public int getEscolhaJogador() {
@@ -40,7 +37,6 @@ public class JogoBean implements Serializable {
         this.escolhaJogador = escolhaJogador;
     }
     
-        // Getter and setter for escolhaComputador
     public int getEscolhaComputador() {
         return escolhaComputador;
     }
@@ -49,7 +45,6 @@ public class JogoBean implements Serializable {
         this.escolhaComputador = escolhaComputador;
     }
 
-    // Getter for opcaoJogador (used in jogo.xhtml)
     public String getOpcaoJogador() {
         if (escolhaJogador == 1) {
             return "Pedra";
@@ -114,7 +109,25 @@ public class JogoBean implements Serializable {
         return numEmpates;
     }
     
-    
-    
-    // Other methods as needed
+    public String getJogadaJogador() {
+        if(this.escolhaJogador == 1) {
+            return "pedra_jogador";
+        } else if(this.escolhaJogador == 2) {
+            return "papel_jogador";
+        } else if(this.escolhaJogador == 3) {
+            return "tesoura_jogador";
+        }
+        return "";
+    }
+
+    public String getJogadaComputador() {
+        if(this.escolhaComputador == 1) {
+            return "pedra_computador";
+        } else if(this.escolhaComputador == 2) {
+            return "papel_computador";
+        } else if(this.escolhaComputador == 3) {
+            return "tesoura_computador";
+        }
+        return "";
+    }
 }

@@ -4,16 +4,54 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <head>
     <title>SW4</title>
+    <style>
+        .line-break {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .botaoBonito {
+            padding: 3px 3px 3px 3px;
+            background-color: lightsteelblue;
+            color: black;
+            border-radius: 8px;
+            box-shadow: 0px 0px 0px 2px black;
+        }
+        
+        .text-center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+        }
+        
+        .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h:form>
-        <!-- Use radio buttons para as opções -->
+    <h:form class="text-center">
         <h:selectOneRadio value="#{jogoBean.escolhaJogador}">
-            <f:selectItem itemValue="1" itemLabel="Pedra" />
-            <f:selectItem itemValue="2" itemLabel="Papel" />
-            <f:selectItem itemValue="3" itemLabel="Tesoura" />
+            <div class="row">
+                <f:selectItem itemValue="1" itemLabel="Pedra">
+                    <h:graphicImage value="/fotos/pedra_jogador.png" width="50" height="50" />
+                </f:selectItem>
+                <f:selectItem itemValue="2" itemLabel="Papel">
+                    <h:graphicImage value="/fotos/papel_jogador.png" width="50" height="50" style="margin-left: 50px; margin-right: 50px;"/>
+                </f:selectItem>
+                <f:selectItem itemValue="3" itemLabel="Tesoura">
+                    <h:graphicImage value="/fotos/tesoura_jogador.png" width="50" height="50" />
+                </f:selectItem>
+            </div>
         </h:selectOneRadio>
-        <h:commandButton value="Jogar" action="#{jogoBean.jogar}" />
+        <h:commandButton value="Jogar" action="#{jogoBean.jogar}" class="botaoBonito" style="margin-top: 5px;"/>
     </h:form>
 </body>
 </html>
