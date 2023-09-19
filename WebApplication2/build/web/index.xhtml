@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html">
+<head>
+    <title>SW4</title>
+</head>
+<body>
+    <h:form>
+        <h:outputLabel for="nome">Nome:</h:outputLabel>
+        <h:inputText id="nome" value="#{jogadorBean.nome}" />
+        <h:commandButton value="Entrar" action="#{jogadorBean.entrarNoJogo}" />
+        <h:commandButton value="Ver Estatísticas" action="#{jogadorBean.verEstatisticas}" />   
+        <h:commandButton value="Zerar Lista" action="#{jogadorBean.zerarLista}" />        
+    </h:form>
+</body>
+</html>
